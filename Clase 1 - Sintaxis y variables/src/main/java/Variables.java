@@ -2,7 +2,59 @@ import java.util.Scanner;
 public class Variables {
     public static void main(String[] args) {
 
+        int var1 = 300;
+        System.out.println(var1);
 
+        boolean isPCAvailable;
+        isPCAvailable = false;
+
+        System.out.println(isPCAvailable);
+
+        //Narrowing
+        int precioDolar = 100;
+        byte dolarEnByte = (byte) precioDolar;
+        System.out.println(dolarEnByte);
+
+        //Widening
+        byte var2 = 4;
+        int var3 = var2;
+        System.out.println(var3);
+
+        int modulo = var2 % 2;
+
+        System.out.println("Modulo: " + modulo);
+
+        int i = 1;
+        System.out.println(++i);
+        System.out.println(i);
+
+        int j = 1;
+        System.out.println(j++);
+        System.out.println(j);
+
+        byte k = 2;
+
+        char letra = '2';
+
+        System.out.println(k == letra);
+
+        int valor4 = 200;
+        int valor5 = 500;
+        System.out.println(valor4 >= valor5);
+
+        float capitalSolicitado = 120000;
+        float interes = 0.1f;
+
+        Scanner sc = new Scanner(System.in);
+        System.out.println("Ingrese el período en meses: ");
+        int periodoEnMeses;
+        periodoEnMeses = sc.nextInt();
+        sc.close();
+        float intereses = capitalSolicitado * interes * periodoEnMeses;
+        float loQueVamosAPagar = intereses + capitalSolicitado;
+        System.out.println(loQueVamosAPagar);
+
+        /*
         //PLUS
         // Creamos un Scanner a partir del input de la consola
         Scanner sc = new Scanner(System.in);
@@ -21,12 +73,7 @@ public class Variables {
         System.out.println("Enter Character value:");
         charData = sc.next().charAt(0);
 
-        // Wrappeamos intData y charData como si fueran objetos. Sólo asi obtendremos su clase y el nombre del type
-        System.out.println(intData + " is of type " + ((Object)intData).getClass().getSimpleName());
-        System.out.println(charData + " is of type " + ((Object)charData).getClass().getSimpleName());
-        //String no necesita ser casteado, porque ya es un objeto.
-        System.out.println(str + " is of type " + str.getClass().getSimpleName());
-        // close Scanner class object
         sc.close();
+         */
     }
 }

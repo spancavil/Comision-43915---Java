@@ -57,7 +57,7 @@ public class Variables {
         /*
         //PLUS
         // Creamos un Scanner a partir del input de la consola
-        Scanner sc = new Scanner(System.in);
+            Scanner sc = new Scanner(System.in);
         // declaramos las variables que utilizaremos.
         int intData;
         char charData;

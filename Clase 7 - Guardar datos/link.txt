@@ -1,0 +1,4 @@
+Intro SQL => https://docs.google.com/document/d/1sJ6hg8WHZPkMfYAjCInU2mPrdtMeDoRjxxiLZWppFqo/edit?usp=sharing
+Guía instalación => https://docs.google.com/document/d/1E5JL0XhODjHEZI8dKp1uF3D9LzwbPcP5/edit?usp=sharing&ouid=104032363794243252949&rtpof=true&sd=true
+Normalización de datos en SQL => https://youtu.be/xoTyrdT9SZI
+

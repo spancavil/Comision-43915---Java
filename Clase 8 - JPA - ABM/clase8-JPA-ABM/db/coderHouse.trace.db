@@ -1,0 +1,6 @@
+2023-05-09 20:04:38 jdbc[3]: exception
+org.h2.jdbc.JdbcSQLSyntaxErrorException: Table "client" already exists; SQL statement:
+CREATE TABLE client( id INTEGER PRIMARY KEY AUTO_INCREMENT, name VARCHAR(75) NOT NULL, lastname VARCHAR(75) NOT NULL, docnumber VARCHAR(11) UNIQUE NOT NULL ) [42101-214]
+2023-05-09 20:05:40 jdbc[3]: exception
+org.h2.jdbc.JdbcSQLSyntaxErrorException: Table "client" already exists; SQL statement:
+CREATE TABLE client( id INTEGER PRIMARY KEY AUTO_INCREMENT, name VARCHAR(75) NOT NULL, lastname VARCHAR(75) NOT NULL, docnumber VARCHAR(11) UNIQUE NOT NULL ) [42101-214]

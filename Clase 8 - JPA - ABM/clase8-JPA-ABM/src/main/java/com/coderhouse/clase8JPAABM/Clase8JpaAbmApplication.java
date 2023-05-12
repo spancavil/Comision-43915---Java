@@ -10,7 +10,7 @@ import org.springframework.boot.autoconfigure.SpringBootApplication;
 import java.util.Optional;
 
 @SpringBootApplication
-public class Clase8JpaAbmApplication implements CommandLineRunner{
+public class Clase8JpaAbmApplication implements CommandLineRunner {
 
 	@Autowired
 	private ProductRepository productoRepository;

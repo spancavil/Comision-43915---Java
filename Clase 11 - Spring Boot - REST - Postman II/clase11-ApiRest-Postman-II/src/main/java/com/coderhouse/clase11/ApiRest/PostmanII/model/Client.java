@@ -1,4 +1,4 @@
-package com.coderhouse.clase9.JPAII.Workshop.model;
+package com.coderhouse.clase11.ApiRest.PostmanII.model;
 
 import jakarta.persistence.*;
 
@@ -12,13 +12,16 @@ public class Client {
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private int id;
 
+    @Column(nullable = false)
     private String name;
+    @Column(nullable = false)
 
     private String lastname;
+    @Column(nullable = false, unique = true)
 
     private String docnumber;
 
-    @OneToMany(mappedBy = "client", fetch = FetchType.EAGER )
+    @OneToMany(mappedBy = "client")
     private List<Invoice> invoice;
 
     //RESTO DE LOS MÉTODOS

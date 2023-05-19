@@ -1,43 +1,30 @@
-package com.coderhouse.clase9.JPAII.Workshop;
+package com.coderhouse.clase11.ApiRest.PostmanII;
 
-import com.coderhouse.clase9.JPAII.Workshop.model.Client;
-import com.coderhouse.clase9.JPAII.Workshop.model.Invoice;
-import com.coderhouse.clase9.JPAII.Workshop.model.Product;
-import com.coderhouse.clase9.JPAII.Workshop.repository.ClientRepository;
-import com.coderhouse.clase9.JPAII.Workshop.repository.InvoiceRepository;
-import com.coderhouse.clase9.JPAII.Workshop.repository.ProductRepository;
-import jakarta.persistence.Tuple;
-import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.boot.CommandLineRunner;
 import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.SpringBootApplication;
 
-import java.util.List;
-import java.util.Objects;
-import java.util.Optional;
-
 @SpringBootApplication
-public class Clase9JpaIIWorkshop implements CommandLineRunner {
+public class Clase10ApiRestPostmanI implements CommandLineRunner {
 
-	@Autowired
+/*	@Autowired
 	private ProductRepository productoRepository;
 
 	@Autowired
 	private ClientRepository clientRepository;
 
 	@Autowired
-	private InvoiceRepository invoiceRepository;
+	private InvoiceRepository invoiceRepository;*/
 
 	public static void main(String[] args) {
-		SpringApplication.run(Clase9JpaIIWorkshop.class, args);
+		SpringApplication.run(Clase10ApiRestPostmanI.class, args);
 	}
-
 
 	@Override
 	public void run(String... args) throws Exception {
 		System.out.println("Server listening. Access H2 on: http://localhost:8888/h2-console");
 
-		try {
+		/*try {
 			//Parte 1: creación de clientes
 			Client cliente1 = new Client();
 			cliente1.setName("Horacio");
@@ -114,17 +101,16 @@ public class Clase9JpaIIWorkshop implements CommandLineRunner {
 			invoice3.setTotal(700);
 			this.invoiceRepository.save(invoice3);
 
-			Optional<Client> clientGuardado = this.clientRepository.findById(2);
-			//client2 = this.clientRepository.findById(2);
-			System.out.println(clientGuardado.get().getInvoice());
+			client1 = this.clientRepository.findById(1);
+			client2 = this.clientRepository.findById(2);
+			System.out.println(client2.get().getInvoice());
 
 		} catch (Exception e) {
 			System.out.println(e.getMessage());
-		}
-
+		}*/
 	}
 
-	static void printClientes (List<Client> listadoClientes) {
+	/*static void printClientes (List<Client> listadoClientes) {
 		for (Client cliente: listadoClientes
 		) {
 			System.out.println(cliente);
@@ -136,5 +122,5 @@ public class Clase9JpaIIWorkshop implements CommandLineRunner {
 		) {
 			System.out.println(factura);
 		}
-	}
+	}*/
 }

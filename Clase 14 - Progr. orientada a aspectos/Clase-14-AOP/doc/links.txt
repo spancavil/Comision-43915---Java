@@ -1,0 +1,3 @@
+1. https://medium.com/javarevisited/spring-core-including-aspect-oriented-programming-in-your-skills-2c37eaa75c2a
+2. https://www.javatpoint.com/spring-aop-aspectj-annotation-example
+3. https://www.baeldung.com/spring-aop-pointcut-tutorial

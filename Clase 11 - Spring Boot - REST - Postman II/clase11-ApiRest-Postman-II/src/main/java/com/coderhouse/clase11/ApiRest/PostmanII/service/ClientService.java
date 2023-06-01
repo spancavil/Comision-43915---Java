@@ -25,4 +25,25 @@ public class ClientService {
             return cliente.get();
         }
     }
+
+    public void updateClient(Client client, int id) throws Exception {
+        Optional<Client> clienteExistente = clientRepository.findById(id);
+        if(clienteExistente.isEmpty()){
+            throw new Exception("Client not exist");
+        } else {
+            clienteExistente.get().setDocnumber(client.getDocnumber());
+            clienteExistente.get().setName(client.getName());
+            clienteExistente.get().setLastname(client.getLastname());
+            clientRepository.save(clienteExistente.get());
+        }
+    }
+
+    public void deleteClient (int id) throws Exception {
+        Optional<Client> clienteExistente = clientRepository.findById(id);
+        if(clienteExistente.isEmpty()){
+            throw new Exception("Client not exist");
+        } else {
+            clientRepository.deleteById(id);
+        }
+    }
 }

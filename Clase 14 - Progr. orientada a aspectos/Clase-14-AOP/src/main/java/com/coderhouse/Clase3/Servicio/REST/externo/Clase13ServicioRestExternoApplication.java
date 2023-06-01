@@ -27,6 +27,7 @@ public class Clase13ServicioRestExternoApplication implements CommandLineRunner 
 		System.out.println("Check h2 console on http://localhost:" + port + "/h2");
 	}
 
+	//Listamos todos los beans que estamos manejando
 	@Bean
 	public CommandLineRunner commandLineRunner(ApplicationContext ctx) {
 		return args -> {

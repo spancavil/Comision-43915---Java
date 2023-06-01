@@ -55,5 +55,46 @@ public class ClientController {
         }
     }
 
+    @PutMapping(path = "{client_id}")
+    public ResponseEntity<Object> putClient (
+            @PathVariable() int id,
+            @RequestBody Client client
+    ) {
+        try {
+            System.out.println(client);
+            System.out.println(id);
+            clientService.updateClient(client, id);
+            return ResponseHandler.generateResponse(
+                    "Data retrieved successfully",
+                    HttpStatus.OK,
+                    "Client updated"
+            );
+        } catch (Exception e) {
+            return ResponseHandler.generateResponse(
+                    e.getMessage(),
+                    HttpStatus.INTERNAL_SERVER_ERROR,
+                    null
+            );
+        }
+    }
+
+    @DeleteMapping
+    public ResponseEntity<Object> deleteClient (@PathVariable() int id) {
+        try {
+            System.out.println(id);
+            clientService.deleteClient(id);
+            return ResponseHandler.generateResponse(
+                    "Client get successfully",
+                    HttpStatus.OK,
+                    "Client deleted"
+            );
+        } catch (Exception e) {
+            return ResponseHandler.generateResponse(
+                    e.getMessage(),
+                    HttpStatus.INTERNAL_SERVER_ERROR,
+                    null
+            );
+        }
+    }
 
 }

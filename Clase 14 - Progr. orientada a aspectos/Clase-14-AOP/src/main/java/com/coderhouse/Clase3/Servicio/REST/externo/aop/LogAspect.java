@@ -12,6 +12,7 @@ import org.springframework.web.context.request.RequestContextHolder;
 import org.springframework.web.context.request.ServletRequestAttributes;
 
 import java.util.Arrays;
+import java.util.stream.Stream;
 
 @Aspect
 //Si no lo colocamos component no lo mappea como un bean, por lo tanto no interceptará nada.
@@ -28,7 +29,11 @@ public class LogAspect {
     @Before("log()")
     public void doBefore(JoinPoint joinPoint) {
         System.out.println("Hola! Me ejecutaré antes de TODOS los métodos en controller");
-        /*ServletRequestAttributes attributes = (ServletRequestAttributes) RequestContextHolder.getRequestAttributes();
+        //Podemos por ejemplo imprimir todos los argumentos.
+        Stream.of(joinPoint.getArgs())
+                .forEach(o -> System.out.println("arg value: " + o.toString()));
+
+        ServletRequestAttributes attributes = (ServletRequestAttributes) RequestContextHolder.getRequestAttributes();
         assert attributes != null;
         HttpServletRequest request = attributes.getRequest();
         String url = request.getRequestURL().toString();
@@ -36,10 +41,10 @@ public class LogAspect {
         String classMethod = joinPoint.getSignature().getDeclaringTypeName() + "." + joinPoint.getSignature().getName();
         Object [] args = joinPoint.getArgs();
         RequestLog requestLog = new RequestLog(url, ip, classMethod, args);
-        System.out.println("Request: " + requestLog);*/
+        System.out.println("Request: " + requestLog);
     }
 
-    /*private class RequestLog {
+    private class RequestLog {
         private final String url;
         private final String ip;
         private final String classMethod;
@@ -61,9 +66,9 @@ public class LogAspect {
                     ", args=" + Arrays.toString(args) +
                     '}';
         }
-    }*/
+    }
 
-    /*@Around("log()")
+    @Around("log()")
     public Object logExecutionTime(ProceedingJoinPoint joinPoint) throws Throwable {
         long startTime = System.nanoTime();
         try {
@@ -72,5 +77,5 @@ public class LogAspect {
         finally {
             System.out.println(joinPoint + " -> " + (System.nanoTime() - startTime) / 1000000 + " ms");
         }
-    }*/
+    }
 }

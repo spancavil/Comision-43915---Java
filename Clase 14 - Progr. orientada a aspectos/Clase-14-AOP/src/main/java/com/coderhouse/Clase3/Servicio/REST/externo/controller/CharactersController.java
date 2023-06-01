@@ -23,7 +23,7 @@ public class CharactersController {
     }
 
     @GetMapping(path = "{id}")
-    public ResponseEntity<HashMap<String, Object>> getCharacters(@PathVariable("id") Integer id){
+    public ResponseEntity<HashMap<String, Object>> getCharacter(@PathVariable("id") Integer id){
         var characters = charactersService.getCharacterById(id);
         return ResponseEntity.ok(characters);
     }

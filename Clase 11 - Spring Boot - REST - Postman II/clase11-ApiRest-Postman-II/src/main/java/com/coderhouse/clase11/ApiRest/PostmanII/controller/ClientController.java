@@ -57,7 +57,7 @@ public class ClientController {
 
     @PutMapping(path = "{client_id}")
     public ResponseEntity<Object> putClient (
-            @PathVariable() int id,
+            @PathVariable("client_id") int id,
             @RequestBody Client client
     ) {
         try {
@@ -65,9 +65,9 @@ public class ClientController {
             System.out.println(id);
             clientService.updateClient(client, id);
             return ResponseHandler.generateResponse(
-                    "Data retrieved successfully",
+                    "Data updated successfully",
                     HttpStatus.OK,
-                    "Client updated"
+                    null
             );
         } catch (Exception e) {
             return ResponseHandler.generateResponse(
@@ -78,15 +78,15 @@ public class ClientController {
         }
     }
 
-    @DeleteMapping
+    @DeleteMapping(path = "{id}")
     public ResponseEntity<Object> deleteClient (@PathVariable() int id) {
         try {
             System.out.println(id);
             clientService.deleteClient(id);
             return ResponseHandler.generateResponse(
-                    "Client get successfully",
+                    "Client deleteed successfully",
                     HttpStatus.OK,
-                    "Client deleted"
+                    null
             );
         } catch (Exception e) {
             return ResponseHandler.generateResponse(
